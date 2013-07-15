@@ -2,6 +2,7 @@ package com.hooper.pushshot2;
 
 import android.app.Activity;
 import android.media.MediaPlayer;
+import android.media.MediaPlayer.OnCompletionListener;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -19,10 +20,10 @@ public class GameActivity extends Activity {
 	Button Missed;
 	Button Made;
 
-	// TextView total;
+	//TextView total;
 	// TextView shotsmissed;
-	// TextView shotsmade;
-	// TextView shotper;
+	//TextView shotsmade;
+	TextView shotper;
 	TextView allshotdata;
 	TextView tvLongestStreak;
 	TextView tvCurrentStreak;
@@ -45,7 +46,7 @@ public class GameActivity extends Activity {
 		// shotsmissed = (TextView) findViewById(R.id.tvMissed);
 		// shotsmade = (TextView) findViewById(R.id.tvMade);
 		// total = (TextView) findViewById(R.id.tvTotal);
-		// shotper = (TextView) findViewById(R.id.ShotPer);
+		shotper = (TextView) findViewById(R.id.ShotPer);
 		allshotdata = (TextView) findViewById(R.id.AllShotData);
 		// Tell the Button Clicks
 
@@ -57,20 +58,32 @@ public class GameActivity extends Activity {
 					MediaPlayer swishSong = MediaPlayer.create(
 							GameActivity.this, R.raw.swish);
 					swishSong.start();
+					swishSong.setOnCompletionListener(new OnCompletionListener(){
+						public void onCompletion(MediaPlayer mp){
+							mp.release();
+						}
+					});
+					
+					
 				} else {
 					MediaPlayer swishSong = MediaPlayer.create(
 							GameActivity.this, R.raw.swish);
 					swishSong.start();
+					swishSong.setOnCompletionListener(new OnCompletionListener(){
+						public void onCompletion(MediaPlayer mp){
+							mp.release();
+						}
+					});
+					
 				}
 
 				ShotsMade++;
 				TotalShots = (ShotsMissed + ShotsMade);
 				ShotPer = (ShotsMade * 100 / TotalShots * 100) / 100;
-				allshotdata.setText(ShotPer + "%    -   " + ShotsMade + " / "
-						+ TotalShots + "   -   " + ShotsMissed
-						+ " Missed Shots");
+				allshotdata.setText(ShotsMade + " / " + TotalShots);
+				shotper.setText(ShotPer + " %");
 				CurrentStreak++;
-				tvCurrentStreak.setText("Current Streak: " + CurrentStreak);
+				tvCurrentStreak.setText("" + CurrentStreak);
 			}
 		});
 
@@ -83,10 +96,17 @@ public class GameActivity extends Activity {
 					MediaPlayer assSong = MediaPlayer.create(GameActivity.this,
 							R.raw.iamasshole);
 					assSong.start();
+					
+					
+					assSong.setOnCompletionListener(new OnCompletionListener(){
+						public void onCompletion(MediaPlayer mp){
+							mp.release();
+						}
+					});
 				}
 
 				if (CurrentStreak > LongestStreak && CurrentStreak > 0) {
-					tvLongestStreak.setText("Longest Streak: " + CurrentStreak);
+					tvLongestStreak.setText("Record: " + CurrentStreak);
 					LongestStreak = CurrentStreak;
 
 				}
@@ -94,11 +114,10 @@ public class GameActivity extends Activity {
 				ShotsMissed++;
 				TotalShots = (ShotsMissed + ShotsMade);
 				ShotPer = (ShotsMade * 100 / TotalShots * 100) / 100;
-				allshotdata.setText(ShotPer + "%    -   " + ShotsMade + " / "
-						+ TotalShots + "   -   " + ShotsMissed
-						+ " Missed Shots");
+				allshotdata.setText(ShotsMade + " / " + TotalShots);
+
 				CurrentStreak = 0;
-				tvCurrentStreak.setText("Current Streak: " + CurrentStreak);
+				tvCurrentStreak.setText("" + CurrentStreak);
 
 			}
 		});
