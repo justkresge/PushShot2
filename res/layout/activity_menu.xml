@@ -8,9 +8,41 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MenuActivity" >
 
-    <TextView
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/playbtn"
+        android:layout_width="450dp"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="@string/playbtntext"
+        android:textColor="#D90000"
+        android:textColorHint="@android:color/holo_blue_light"
+        android:textSize="25sp"
+        android:textStyle="bold" 
+        />
+
+    <Button
+        android:id="@+id/scoresbtn"
+        android:layout_width="450dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="75dp"
+        android:text="@string/scoresbtntext"
+        android:textColorHint="@android:color/holo_blue_light"
+        android:textSize="25sp" 
+        />
+    <Button
+        android:id="@+id/helpbtn"
+        android:layout_width="450dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="135dp"
+        android:text="@string/helpbtntext"
+        android:textColorHint="@android:color/holo_blue_light"
+        android:textSize="25sp" />
+   
 
 </RelativeLayout>
