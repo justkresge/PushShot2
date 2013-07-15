@@ -6,11 +6,90 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".GameActivity" >
+    tools:context=".GameActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/MissedBtn"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:text="Miss"
+        android:textSize="25sp"/>
+        <Button
+        android:id="@+id/MadeBtn"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="Make"
+        android:textSize="25sp"/>
+
+ <!--       <TextView
+            android:id="@+id/tvTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="16dp"
+            android:textSize="25sp"
+            android:text="Total: 0" />
+        
+        <TextView
+            android:id="@+id/tvMade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="46dp"
+            android:textSize="25sp"
+            android:text="Shots Made: 0" />
+          <TextView
+            android:id="@+id/tvMissed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="76dp"
+            android:textSize="25sp"
+            android:text="Shots Missed: 0" />
+           <TextView
+            android:id="@+id/ShotPer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="106dp"
+            android:textSize="25sp"
+            android:text="Shot Percentage: 0" />
+        -->
+
+        <TextView
+            android:id="@+id/AllShotData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="38dp"
+            android:text="  0%  -   0  /  0  -  0 Missed Shots"
+            android:textSize="25sp"/>
+        <TextView
+            android:id="@+id/tvCurrentStreak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+             android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="96dp"
+            android:textSize="25sp"
+            android:text="Current Streak: 0"/>
+           <TextView
+            android:id="@+id/tvLongestStreak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+             android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="136dp"
+            android:textSize="25sp"
+            android:text="Longest Streak: 0"/>
 
 </RelativeLayout>
