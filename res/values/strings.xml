@@ -8,5 +8,6 @@
     <string name="title_activity_menu">MenuActivity</string>
     <string name="title_activity_scores">Scores</string>
     <string name="title_activity_help">HelpActivity</string>
+    <string name="title_activity_game">GameActivity</string>
 
 </resources>
